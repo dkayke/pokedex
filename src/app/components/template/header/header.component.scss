@@ -1,0 +1,28 @@
+.header {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(44, 0, 192, 1) 100%
+  );
+}
+
+.logo {
+  display: block;
+  margin-right: 20px;
+  max-height: 30px;
+  top: 10px;
+}
+
+.title {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+i {
+  color: #020024;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
