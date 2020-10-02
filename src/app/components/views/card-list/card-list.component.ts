@@ -27,15 +27,17 @@ export class CardListComponent implements OnInit {
     private router: Router
   ) { }
 
-  cards: CardItem[] = [];
   static pageIndex: number;
+  cards: CardItem[] = [];
+  pageLength: number = 1000;
+  pageSize: number = 20;
 
   ngOnInit(): void {
     if (!CardListComponent.pageIndex) {
       CardListComponent.pageIndex = 1;
     }
 
-    this.cardService.all(CardListComponent.pageIndex).subscribe((response: Cards) => {
+    this.cardService.all(CardListComponent.pageIndex, this.pageSize).subscribe((response: Cards) => {
       this.cards = response.cards;
     })
   }
@@ -45,7 +47,6 @@ export class CardListComponent implements OnInit {
   }
 
   navigate(event: EventPaginator) {
-    console.log(event)
     this.cardService.all(event.pageIndex + 1).subscribe((response: Cards) => {
       CardListComponent.pageIndex = event.pageIndex + 1;
       this.cards = response.cards;
@@ -53,7 +54,6 @@ export class CardListComponent implements OnInit {
   }
 
   detail(id: string): void {
-    console.log(id);
     this.router.navigate([`/cards/${id}`]);
   }
 

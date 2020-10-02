@@ -1,5 +1,5 @@
 <div class="paginator">
-    <mat-paginator [length]="100" [pageSize]="20" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
+    <mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
     </mat-paginator>
 </div>
 
@@ -11,6 +11,6 @@
 </div>
 
 <div class="paginator">
-    <mat-paginator [length]="100" [pageSize]="20" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
+    <mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
     </mat-paginator>
 </div>
