@@ -8,10 +8,14 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { HeaderComponent } from './components/template/header/header.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { CardListComponent } from './components/views/card-list/card-list.component';
 import { CardDetailComponent } from './components/views/card-detail/card-detail.component';
+import { CardResumeComponent } from './components/card-resume/card-resume.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +24,17 @@ import { CardDetailComponent } from './components/views/card-detail/card-detail.
     HeaderComponent,
     HomeComponent,
     CardListComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    CardResumeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
-    HttpClientModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

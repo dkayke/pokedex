@@ -1,1 +1,16 @@
-<p>card-list works!</p>
+<div class="paginator">
+    <mat-paginator [length]="100" [pageSize]="20" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
+    </mat-paginator>
+</div>
+
+
+<div class="list-card">
+    <div class="card" *ngFor="let card of cards" (click)="detail(card.id)">
+        <app-card-resume [card]="card"></app-card-resume>
+    </div>
+</div>
+
+<div class="paginator">
+    <mat-paginator [length]="100" [pageSize]="20" [pageIndex]="pageIndex - 1" (page)="navigate($event)">
+    </mat-paginator>
+</div>

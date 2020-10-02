@@ -1,1 +1,56 @@
-<p>card-detail works!</p>
+<div class="turn-back">
+    <a routerLink="cards"><i class="material-icons">keyboard_arrow_left</i>Voltar</a>
+</div>
+
+<div *ngIf="card?.id.length" class="detail">
+    <div>
+        <img src="{{card.imageUrlHiRes}}" title={{card.name}} alt="Card {{card.name}}" />
+    </div>
+    <div class="infos">
+        <mat-card *ngIf="card?.name">
+            <h1 class="name">{{card.name}}</h1>
+            <p class="id">ID: {{card.id}}</p>
+        </mat-card>
+
+        <mat-card *ngIf="card?.types">
+            <h1 class="title">Tipos</h1>
+            <p>{{ card.types.join(', ')}}</p>
+        </mat-card>
+
+        <mat-card *ngIf="card?.attacks">
+            <h1 class="title">Ataques</h1>
+            <div *ngFor="let attack of card.attacks; let i = index">
+                <p *ngIf="!!attack?.name" class="sub-title">Nome: {{attack.name}}</p>
+                <p *ngIf="!!attack?.cost">Custo de mana: {{attack.cost?.join(', ')}} </p>
+                <p *ngIf="!!attack?.damage">Dano: {{attack.damage}}</p>
+                <p *ngIf="!!attack?.text">Descrição: {{attack.text}}</p>
+                <hr *ngIf="card.attacks.length - 1 > i" class="divider">
+            </div>
+        </mat-card>
+
+        <mat-card *ngIf="card?.resistances">
+            <h1 class="title">Resistência</h1>
+            <div *ngFor="let resistance of card.resistances; let i = index">
+                <p class="sub-title">Tipo: {{resistance.type}}</p>
+                <p>Valor: {{resistance.value}}</p>
+                <hr *ngIf="card.resistances.length - 1 > i" class="divider">
+            </div>
+        </mat-card>
+
+        <mat-card *ngIf="card?.weaknesses">
+            <h1 class="title">Fraquezas</h1>
+            <div *ngFor="let weakness of card.weaknesses; let i = index">
+                <p class="sub-title">Tipo: {{weakness.type}}</p>
+                <p>Valor: {{weakness.value}}</p>
+                <hr *ngIf="card.weaknesses.length - 1 > i" class="divider">
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+
+<div *ngIf="hasError">
+    <h1>Card não encontrado! Tente encontrá-lo na
+        <a routerLink="cards">lista de cards.</a>
+    </h1>
+</div>

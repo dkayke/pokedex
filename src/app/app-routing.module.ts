@@ -5,13 +5,12 @@ import { CardListComponent } from './components/views/card-list/card-list.compon
 
 const routes: Routes = [
   {
-    path: '',
-    component: CardListComponent
+    path: 'cards', children: [
+      { path: '', component: CardListComponent },
+      { path: ':id', component: CardDetailComponent }
+    ]
   },
-  {
-    path: 'card/detail',
-    component: CardDetailComponent
-  }
+  { path: '**', redirectTo: 'cards' }
 ];
 
 @NgModule({

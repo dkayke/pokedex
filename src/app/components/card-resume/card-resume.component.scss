@@ -1,0 +1,35 @@
+.card {
+  width: 100%;
+  max-width: 245px;
+  padding: 15px;
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      rgb(245, 245, 245) 0%,
+      rgb(255, 255, 255) 100%
+    );
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+}
+
+img {
+  max-width: 245px;
+}
+
+h1 {
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 0px;
+  text-transform: capitalize;
+  color: #090979;
+  margin: 10px 0 5px !important;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
