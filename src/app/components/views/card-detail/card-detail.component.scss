@@ -5,11 +5,16 @@
   flex-direction: row;
   padding-bottom: 30px;
 
-  img {
-    height: auto;
+  .image {
     width: 100%;
     max-width: 400px;
-    margin-bottom: 50px;
+
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 50px;
+    }
   }
 
   .infos {
